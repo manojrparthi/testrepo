@@ -1,0 +1,32 @@
+
+# Example profiles.yml for DIF dbt Config-Driven Solution
+# Copy this file to ~/.dbt/profiles.yml and update with your credentials
+
+dif_snowflake:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: DIF_DEVELOPER
+      database: DB_GOVERNANCE
+      warehouse: DIF_WH
+      schema: DIF_DBT
+      threads: 4
+      client_session_keep_alive: false
+      query_tag: dif_dbt_v15
+      
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      authenticator: externalbrowser  # For SSO authentication
+      role: DIF_ADMIN
+      database: DB_GOVERNANCE
+      warehouse: DIF_WH_PROD
+      schema: DIF_DBT
+      threads: 8
+      client_session_keep_alive: true
+      query_tag: dif_dbt_v15_prod
