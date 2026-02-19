@@ -1,0 +1,1 @@
+{{ test_unique(column_name="RULE_ID", model=get_where_subquery(source('config_controls', 'rules'))) }}

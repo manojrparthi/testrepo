@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="RULE_GROUP", model=get_where_subquery(source('config_controls', 'rules'))) }}

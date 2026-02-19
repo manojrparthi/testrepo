@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="CONNECTION_NAME", model=get_where_subquery(source('config_controls', 'connections'))) }}

@@ -1,0 +1,1 @@
+{{ test_unique(column_name="CONNECTION_NAME", model=get_where_subquery(source('config_controls', 'connections'))) }}

@@ -1,0 +1,2 @@
+{{ config({"severity":"Warn","tags":[]}) }}
+{{ test_accepted_values(column_name="RULE_TYPE", model=get_where_subquery(source('config_controls', 'rules')), values=["NULL_CHECK","REFERENTIAL_INTEGRITY","SUM_MATCH","ROW_COUNT","ROW_COUNT_RANGE","DUPLICATE_CHECK","VALUE_RANGE","COMPLETENESS_CHECK","REGEX_PATTERN","SCHEMA_VALIDATION","DATA_FRESHNESS","CUSTOM_SQL"]) }}

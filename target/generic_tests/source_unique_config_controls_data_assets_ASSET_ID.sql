@@ -1,0 +1,1 @@
+{{ test_unique(column_name="ASSET_ID", model=get_where_subquery(source('config_controls', 'data_assets'))) }}
